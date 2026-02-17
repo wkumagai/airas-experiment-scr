@@ -82,8 +82,11 @@ class SparseTopKSelfAttention(nn.Module):
         ksel = min(self.k, T)
         idx = scores.topk(ksel, dim=-1).indices  # (B,H,T,k)
 
-        Ksel = K.gather(2, idx[..., None].expand(B, self.num_heads, T, ksel, self.head_dim))
-        Vsel = V.gather(2, idx[..., None].expand(B, self.num_heads, T, ksel, self.head_dim))
+        # Flatten (T, ksel) for compatible gather (both tensors 4D)
+        idx_flat = idx.reshape(B, self.num_heads, T * ksel)                                    # (B, H, T*k)
+        idx_exp = idx_flat.unsqueeze(-1).expand(B, self.num_heads, T * ksel, self.head_dim)    # (B, H, T*k, hd)
+        Ksel = K.gather(2, idx_exp).reshape(B, self.num_heads, T, ksel, self.head_dim)
+        Vsel = V.gather(2, idx_exp).reshape(B, self.num_heads, T, ksel, self.head_dim)
 
         logits = (Q.unsqueeze(-2) * Ksel).sum(-1) / math.sqrt(self.head_dim)  # (B,H,T,k)
         attn = F.softmax(logits, dim=-1)
