@@ -107,10 +107,11 @@ jobs:
       - name: Resolve artifact name
         id: resolve-artifact
         run: |
+          SAFE_RUN_ID=$(echo "${{ github.event.inputs.run_id }}" | tr '/' '--')
           if [ "${{ github.event.inputs.run_stage }}" = "visualization" ]; then
             echo "name=${{ github.event.inputs.run_stage }}-${{ github.event.inputs.workflow_run_id }}" >> "$GITHUB_OUTPUT"
           else
-            echo "name=${{ github.event.inputs.run_stage }}-${{ github.event.inputs.workflow_run_id }}-${{ github.event.inputs.run_id }}" >> "$GITHUB_OUTPUT"
+            echo "name=${{ github.event.inputs.run_stage }}-${{ github.event.inputs.workflow_run_id }}-${SAFE_RUN_ID}" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Download stage results
@@ -246,7 +247,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: validator-${{ github.run_id }}-${{ github.event.inputs.run_id }}
+          name: validator-${{ github.run_id }}-${{ steps.resolve-artifact.outputs.name }}
           path: ${{ env.RESULTS_DIR }}/validation_result.json
 
       - name: Commit and push fix

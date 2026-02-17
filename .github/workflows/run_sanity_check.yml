@@ -53,6 +53,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Sanitize run_id for artifact name
+        id: sanitize
+        run: |
+          SAFE_RUN_ID=$(echo "$RUN_ID" | tr '/' '--')
+          echo "safe_run_id=$SAFE_RUN_ID" >> "$GITHUB_OUTPUT"
+
       - name: Check Docker and Dockerfile availability
         id: check-docker
         run: |
@@ -182,5 +188,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: sanity-${{ github.run_id }}-${{ env.RUN_ID }}
+          name: sanity-${{ github.run_id }}-${{ steps.sanitize.outputs.safe_run_id }}
           path: ${{ env.RESULTS_DIR }}

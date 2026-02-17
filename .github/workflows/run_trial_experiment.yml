@@ -1,4 +1,4 @@
-﻿name: "Run Trial Experiment"
+name: "Run Trial Experiment"
 
 on:
   workflow_dispatch:
@@ -58,6 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       current_run_id: ${{ steps.parse.outputs.current_run_id }}
+      safe_current_run_id: ${{ steps.parse.outputs.safe_current_run_id }}
       remaining_run_ids: ${{ steps.parse.outputs.remaining_run_ids }}
       is_empty: ${{ steps.parse.outputs.is_empty }}
 
@@ -74,10 +75,13 @@ jobs:
             echo "is_empty=false" >> "$GITHUB_OUTPUT"
             CURRENT_ID=$(echo "$RUN_IDS" | jq -r '.[0]')
             REMAINING_IDS=$(echo "$RUN_IDS" | jq -c '.[1:]')
+            SAFE_ID=$(echo "$CURRENT_ID" | tr '/' '--')
             echo "current_run_id=$CURRENT_ID" >> "$GITHUB_OUTPUT"
+            echo "safe_current_run_id=$SAFE_ID" >> "$GITHUB_OUTPUT"
             echo "remaining_run_ids=$REMAINING_IDS" >> "$GITHUB_OUTPUT"
 
             echo "Processing run_id: $CURRENT_ID"
+            echo "Safe artifact run_id: $SAFE_ID"
             echo "Remaining run_ids: $REMAINING_IDS"
           fi
 
@@ -94,6 +98,7 @@ jobs:
 
     env:
       RUN_ID: ${{ needs.setup.outputs.current_run_id }}
+      SAFE_RUN_ID: ${{ needs.setup.outputs.safe_current_run_id }}
 
     steps:
       - name: Checkout repository
@@ -143,7 +148,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: trial-results-${{ github.run.id }}-${{ env.RUN_ID }}
+          name: trial-results-${{ github.run_id }}-${{ env.SAFE_RUN_ID }}
           path: ${{ env.RESULTS_DIR }}
 
 
@@ -193,7 +198,7 @@ jobs:
       - name: Download experiment results
         uses: actions/download-artifact@v4
         with:
-          name: trial-results-${{ github.run.id }}-${{ needs.setup.outputs.current_run_id }}
+          name: trial-results-${{ github.run_id }}-${{ needs.setup.outputs.safe_current_run_id }}
           path: ${{ env.RESULTS_DIR }}
 
       - name: Extract error summary
@@ -311,7 +316,7 @@ jobs:
       - name: Download experiment results
         uses: actions/download-artifact@v4
         with:
-          name: trial-results-${{ github.run.id }}-${{ needs.setup.outputs.current_run_id }}
+          name: trial-results-${{ github.run_id }}-${{ needs.setup.outputs.safe_current_run_id }}
           path: ${{ env.RESULTS_DIR }}
 
       - name: Commit and push successful trial result
