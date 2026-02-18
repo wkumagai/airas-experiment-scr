@@ -51,3 +51,45 @@ Running: python -u -m src.train run=comparative-1-transformer80m-ccdv/arxiv-summ
 trial_mode complete for comparative-1-transformer80m-ccdv/arxiv-summarization: best_val_rougeL_mean=0.0000 std=0.0000
 === [TRIAL RUN] PASSED for comparative-1-transformer80m-ccdv/arxiv-summarization at Wed Feb 18 05:33:36 UTC 2026 ===
 
+=== [UV SYNC] Start at Wed Feb 18 05:34:00 UTC 2026 ===
+=== [UV SYNC] Finished successfully at Wed Feb 18 05:34:35 UTC 2026 ===
+=== [TRIAL RUN] Start for comparative-1-transformer80m-ccdv/pubmed-summarization at Wed Feb 18 05:34:35 UTC 2026 ===
+Running: python -u -m src.train run=comparative-1-transformer80m-ccdv/pubmed-summarization results_dir=.research/results mode=trial
+[2026-02-18 05:34:45,972][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-18 05:34:45,981][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/config.json "HTTP/1.1 200 OK"
+[2026-02-18 05:34:45,990][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/config.json "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,020][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,042][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,066][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/google/long-t5-local-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,102][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/google/long-t5-local-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,127][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/spiece.model "HTTP/1.1 302 Found"
+[2026-02-18 05:34:46,150][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/google/long-t5-local-base/xet-read-token/495147576566a61d910384ed880fcefa6ec40b49 "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,460][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-18 05:34:46,470][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/tokenizer.json "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,480][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/tokenizer.json "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,519][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,544][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,567][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,849][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-02-18 05:34:46,858][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/ccdv/pubmed-summarization/6b30a2cae59b11ed77cb19959bffccbbd18e1106/README.md "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,867][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/resolve-cache/datasets/ccdv/pubmed-summarization/6b30a2cae59b11ed77cb19959bffccbbd18e1106/README.md "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,887][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/pubmed-summarization.py "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,935][httpx][INFO] - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/ccdv/pubmed-summarization/ccdv/pubmed-summarization.py "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:46,967][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/pubmed-summarization/revision/6b30a2cae59b11ed77cb19959bffccbbd18e1106 "HTTP/1.1 200 OK"
+[2026-02-18 05:34:46,985][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/.huggingface.yaml "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:47,088][httpx][INFO] - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=ccdv/pubmed-summarization "HTTP/1.1 200 OK"
+[2026-02-18 05:34:47,114][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/pubmed-summarization/tree/6b30a2cae59b11ed77cb19959bffccbbd18e1106/document?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 05:34:47,138][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/pubmed-summarization/tree/6b30a2cae59b11ed77cb19959bffccbbd18e1106?recursive=false&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 05:34:47,159][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/dataset_infos.json "HTTP/1.1 404 Not Found"
+[2026-02-18 05:34:47,187][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/pubmed-summarization/tree/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 05:34:47,216][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section/train-00000-of-00005.parquet "HTTP/1.1 302 Found"
+[2026-02-18 05:34:47,234][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/pubmed-summarization/xet-read-token/6b30a2cae59b11ed77cb19959bffccbbd18e1106 "HTTP/1.1 200 OK"
+[2026-02-18 05:34:49,425][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section/train-00001-of-00005.parquet "HTTP/1.1 302 Found"
+[2026-02-18 05:34:51,253][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section/train-00002-of-00005.parquet "HTTP/1.1 302 Found"
+[2026-02-18 05:34:53,333][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section/train-00003-of-00005.parquet "HTTP/1.1 302 Found"
+[2026-02-18 05:34:54,720][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section/train-00004-of-00005.parquet "HTTP/1.1 302 Found"
+[2026-02-18 05:34:56,706][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section/validation-00000-of-00001.parquet "HTTP/1.1 302 Found"
+[2026-02-18 05:34:57,874][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/pubmed-summarization/resolve/6b30a2cae59b11ed77cb19959bffccbbd18e1106/section/test-00000-of-00001.parquet "HTTP/1.1 302 Found"
+trial_mode complete for comparative-1-transformer80m-ccdv/pubmed-summarization: best_val_rougeL_mean=0.0000 std=0.0000
+=== [TRIAL RUN] PASSED for comparative-1-transformer80m-ccdv/pubmed-summarization at Wed Feb 18 06:01:27 UTC 2026 ===
+
