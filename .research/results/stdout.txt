@@ -283,3 +283,56 @@ Running: python -u -m src.train run=comparative-3-transformer80m-ccdv/pubmed-sum
 trial_mode complete for comparative-3-transformer80m-ccdv/pubmed-summarization: best_val_rougeL_mean=0.0000 std=0.0000
 === [TRIAL RUN] PASSED for comparative-3-transformer80m-ccdv/pubmed-summarization at Wed Feb 18 08:00:02 UTC 2026 ===
 
+=== [UV SYNC] Start at Wed Feb 18 08:00:30 UTC 2026 ===
+=== [UV SYNC] Finished successfully at Wed Feb 18 08:02:15 UTC 2026 ===
+=== [TRIAL RUN] Start for proposed-transformer80m-ccdv/arxiv-summarization at Wed Feb 18 08:02:15 UTC 2026 ===
+Running: python -u -m src.train run=proposed-transformer80m-ccdv/arxiv-summarization results_dir=.research/results mode=trial
+[2026-02-18 08:02:26,451][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-18 08:02:26,456][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/config.json "HTTP/1.1 200 OK"
+[2026-02-18 08:02:26,464][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/config.json "HTTP/1.1 200 OK"
+[2026-02-18 08:02:26,510][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:26,550][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/tokenizer_config.json "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:26,585][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/google/long-t5-local-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:26,625][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/google/long-t5-local-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 08:02:26,675][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/spiece.model "HTTP/1.1 302 Found"
+[2026-02-18 08:02:26,713][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/google/long-t5-local-base/xet-read-token/495147576566a61d910384ed880fcefa6ec40b49 "HTTP/1.1 200 OK"
+[2026-02-18 08:02:27,129][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+[2026-02-18 08:02:27,130][huggingface_hub.utils._http][WARNING] - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-02-18 08:02:27,135][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/tokenizer.json "HTTP/1.1 200 OK"
+[2026-02-18 08:02:27,140][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/google/long-t5-local-base/495147576566a61d910384ed880fcefa6ec40b49/tokenizer.json "HTTP/1.1 200 OK"
+[2026-02-18 08:02:27,191][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:27,227][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:27,280][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/google/long-t5-local-base/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:27,602][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-02-18 08:02:27,608][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/ccdv/arxiv-summarization/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/README.md "HTTP/1.1 200 OK"
+[2026-02-18 08:02:27,614][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/resolve-cache/datasets/ccdv/arxiv-summarization/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/README.md "HTTP/1.1 200 OK"
+[2026-02-18 08:02:27,648][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/arxiv-summarization.py "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:27,756][httpx][INFO] - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/ccdv/arxiv-summarization/ccdv/arxiv-summarization.py "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:27,802][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/arxiv-summarization/revision/240aaf1a969b3f8cd0ade6986bfad0cd730ee288 "HTTP/1.1 200 OK"
+[2026-02-18 08:02:27,836][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/.huggingface.yaml "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:27,951][httpx][INFO] - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=ccdv/arxiv-summarization "HTTP/1.1 200 OK"
+[2026-02-18 08:02:27,990][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/arxiv-summarization/tree/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/document?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 08:02:28,025][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/arxiv-summarization/tree/240aaf1a969b3f8cd0ade6986bfad0cd730ee288?recursive=false&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 08:02:28,060][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/dataset_infos.json "HTTP/1.1 404 Not Found"
+[2026-02-18 08:02:28,098][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/arxiv-summarization/tree/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-02-18 08:02:28,140][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00000-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:28,172][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/ccdv/arxiv-summarization/xet-read-token/240aaf1a969b3f8cd0ade6986bfad0cd730ee288 "HTTP/1.1 200 OK"
+[2026-02-18 08:02:29,229][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00001-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:30,276][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00002-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:31,281][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00003-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:32,247][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00004-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:33,251][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00005-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:34,176][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00006-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:35,104][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00007-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:36,021][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00008-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:36,937][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00009-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:38,045][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00010-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:39,278][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00011-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:40,134][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00012-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:41,284][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00013-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:42,208][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/train-00014-of-00015.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:43,748][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/validation-00000-of-00001.parquet "HTTP/1.1 302 Found"
+[2026-02-18 08:02:44,441][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/ccdv/arxiv-summarization/resolve/240aaf1a969b3f8cd0ade6986bfad0cd730ee288/section/test-00000-of-00001.parquet "HTTP/1.1 302 Found"
+trial_mode complete for proposed-transformer80m-ccdv/arxiv-summarization: best_val_rougeL_mean=0.0000 std=0.0000
+=== [TRIAL RUN] PASSED for proposed-transformer80m-ccdv/arxiv-summarization at Wed Feb 18 08:31:06 UTC 2026 ===
+
