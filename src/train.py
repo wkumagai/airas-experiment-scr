@@ -464,6 +464,8 @@ def main(cfg: DictConfig) -> None:
         cfg.training.seeds = [int(cfg.training.seed)]
         cfg.dataset.preprocessing.train_subsample = 100
         cfg.dataset.preprocessing.val_subsample = 10
+        cfg.dataset.preprocessing.max_encoder_len = 512
+        cfg.dataset.preprocessing.max_decoder_len = 32
 
     run_id = str(cfg.run.run_id)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
