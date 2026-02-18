@@ -460,8 +460,9 @@ def main(cfg: DictConfig) -> None:
         cfg.training.max_steps = 2
         cfg.training.eval_every_n_steps = 1
         cfg.training.log_every_n_steps = 1
-        # Limit to 1 seed and small validation set for fast CPU trial
+        # Limit to 1 seed and small datasets for fast CPU trial
         cfg.training.seeds = [int(cfg.training.seed)]
+        cfg.dataset.preprocessing.train_subsample = 100
         cfg.dataset.preprocessing.val_subsample = 10
 
     run_id = str(cfg.run.run_id)
